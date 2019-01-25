@@ -42,6 +42,7 @@
     <Compile Include="Enum\MissingValuesType.cs" />
     <Compile Include="Enum\CharacterCode.cs" />
     <Compile Include="Enum\VariableGroupType.cs" />
+    <Compile Include="Enum\VariableRole.cs" />
     <Compile Include="SavFile\CodePageRecord.cs" />
     <Compile Include="SavFile\DataRecord.cs" />
     <Compile Include="Enum\CompressionCode.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Enum\RecordSubType.cs" />
     <Compile Include="Enum\MeasurementType.cs" />
     <Compile Include="SavFile\LongVariableNamesRecord.cs" />
+    <Compile Include="SavFile\VariableRolesRecord.cs" />
     <Compile Include="SavFile\VeryLongStringRecord.cs" />
     <Compile Include="SavFile\MultipleResponseSetsRecord.cs" />
     <Compile Include="SavFile\ValueLabelVariablesRecord.cs" />

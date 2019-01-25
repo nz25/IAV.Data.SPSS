@@ -37,7 +37,11 @@ namespace IAV.Data.SPSS.SavFile
             foreach (var entry in entries)
             {
                 var values = entry.Split('=');
-                this.StringLengths.Add(values[0], values[1]);
+                if (values.Count() == 2)
+                {
+                    this.StringLengths.Add(values[0], values[1]);
+                }
+                
             }
 
         }

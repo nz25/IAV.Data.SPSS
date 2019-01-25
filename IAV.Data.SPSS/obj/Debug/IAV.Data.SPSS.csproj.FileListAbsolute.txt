@@ -2,3 +2,8 @@ c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\IAV.Data.S
 c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\IAV.Data.SPSS\bin\Debug\IAV.Data.SPSS.pdb
 c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\IAV.Data.SPSS\obj\Debug\IAV.Data.SPSS.dll
 c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\IAV.Data.SPSS\obj\Debug\IAV.Data.SPSS.pdb
+X:\dev\2013\IAV.Data.SPSS\IAV.Data.SPSS\bin\Debug\IAV.Data.SPSS.dll
+X:\dev\2013\IAV.Data.SPSS\IAV.Data.SPSS\bin\Debug\IAV.Data.SPSS.pdb
+X:\dev\2013\IAV.Data.SPSS\IAV.Data.SPSS\obj\Debug\IAV.Data.SPSS.csprojResolveAssemblyReference.cache
+X:\dev\2013\IAV.Data.SPSS\IAV.Data.SPSS\obj\Debug\IAV.Data.SPSS.dll
+X:\dev\2013\IAV.Data.SPSS\IAV.Data.SPSS\obj\Debug\IAV.Data.SPSS.pdb

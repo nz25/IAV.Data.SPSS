@@ -9,3 +9,14 @@ c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\bin
 c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\bin\Debug\IAV.Data.SPSS.pdb
 c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\obj\Debug\Tester.exe
 c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\obj\Debug\Tester.pdb
+X:\dev\2013\IAV.Data.SPSS\Tester\bin\Debug\Tester.exe.config
+X:\dev\2013\IAV.Data.SPSS\Tester\obj\Debug\Tester.exe
+X:\dev\2013\IAV.Data.SPSS\Tester\obj\Debug\Tester.pdb
+X:\dev\2013\IAV.Data.SPSS\Tester\bin\Debug\Tester.exe
+X:\dev\2013\IAV.Data.SPSS\Tester\bin\Debug\Tester.pdb
+X:\dev\2013\IAV.Data.SPSS\Tester\bin\Debug\IAV.Data.SPSS.dll
+X:\dev\2013\IAV.Data.SPSS\Tester\bin\Debug\IAV.Data.SPSS.pdb
+X:\dev\2013\IAV.Data.SPSS\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+X:\dev\2013\IAV.Data.SPSS\Tester\obj\Debug\Tester.Form1.resources
+X:\dev\2013\IAV.Data.SPSS\Tester\obj\Debug\Tester.Properties.Resources.resources
+X:\dev\2013\IAV.Data.SPSS\Tester\obj\Debug\Tester.csproj.GenerateResource.Cache

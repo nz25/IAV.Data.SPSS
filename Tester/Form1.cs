@@ -25,23 +25,23 @@ namespace Tester
         {
 
             // READING
-            FileStream s = new FileStream("d:\\prepare DR Commerzbank AT.sav", FileMode.Open);
+            FileStream s = new FileStream("d:\\learning\\r\\prepared OTab 88106665_Moet_GB-CH.sav", FileMode.Open);
             IAV.Data.SPSS.SavFile.File savFile = new IAV.Data.SPSS.SavFile.File();
             savFile.ReadFromStream(s);
 
             IAV.Data.SPSS.Dataset ds = new IAV.Data.SPSS.Dataset();
             ds.ReadFromSavFile(savFile);
             
-            //int recordcount = 0;
-            //foreach (var dataRecord in savFile.DataRecords)
-            //{
-            //    recordcount++;
-            //}            
-            //MessageBox.Show(recordcount.ToString());
+            int recordcount = 0;
+            foreach (var dataRecord in savFile.DataRecords)
+            {
+                recordcount++;
+            }            
+            MessageBox.Show(recordcount.ToString());
 
             // WRITING
-            //FileStream t = new FileStream("d:\\test.sav", FileMode.Create);
-            //savFile.WriteToStream(t);
+            FileStream t = new FileStream("d:\\test.sav", FileMode.Create);
+            savFile.WriteToStream(t);
 
             MessageBox.Show("OK");
         }

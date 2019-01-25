@@ -30,6 +30,7 @@ namespace IAV.Data.SPSS.SavFile
         public MultipleResponseSetsRecord MultipleResponseSetsRecord { get; set; }
         public CodePageRecord CodePageRecord { get; set; }
         public LongValueLabelsRecord LongValueLabelsRecord { get; set; }
+        public VariableRolesRecord VariableRolesRecord { get; set; }
 
         // DataRecords
         public IEnumerable<DataRecord> DataRecords { get; set; }
@@ -137,6 +138,10 @@ namespace IAV.Data.SPSS.SavFile
                     case RecordSubType.LongValueLabelsRecord:
                         this.LongValueLabelsRecord = new LongValueLabelsRecord(this);
                         this.LongValueLabelsRecord.ReadFromInfoRecord(infoRecord);
+                        break;
+                    case RecordSubType.VariableRolesRecord:
+                        this.VariableRolesRecord = new VariableRolesRecord(this);
+                        this.VariableRolesRecord.ReadFromInfoRecord(infoRecord);
                         break;
                     default:
                         break;

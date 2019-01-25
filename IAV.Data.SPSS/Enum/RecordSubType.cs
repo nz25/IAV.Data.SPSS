@@ -14,6 +14,7 @@ namespace IAV.Data.SPSS.Enum
         VariableDisplayParameterRecord = 11,
         LongVariableNamesRecord = 13,
         VeryLongStringRecord = 14,
+        VariableRolesRecord = 18,
         CodePageRecord = 20,
         LongValueLabelsRecord = 21
     }
