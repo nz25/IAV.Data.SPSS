@@ -43,7 +43,8 @@ namespace Tester
             //FileStream t = new FileStream("d:\\test.sav", FileMode.Create);
             //savFile.WriteToStream(t);
 
-            // TO DO INFORECORD SUBTYPE 21 LONGVALUELABELS - VERSTEHEN
+            var originalBytes = (from item in savFile.InfoRecords[6].Items select item[0]).ToArray();
+            var xxx = Encoding.Default.GetString(originalBytes);
             MessageBox.Show("OK");
         }
 

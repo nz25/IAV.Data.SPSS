@@ -13,7 +13,9 @@ namespace IAV.Data.SPSS.SavFile
         MultipleResponseSetsRecord = 7,
         VariableDisplayParameterRecord = 11,
         LongVariableNamesRecord = 13,
-        VeryLongStringRecord = 14
-        // LongValueLabelsRecord = 21
+        VeryLongStringRecord = 14,
+        Subtype16Record = 16,
+        CodePageRecord = 20,
+        LongValueLabelsRecord = 21
     }
 }

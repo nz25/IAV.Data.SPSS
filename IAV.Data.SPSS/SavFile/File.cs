@@ -27,6 +27,9 @@ namespace IAV.Data.SPSS.SavFile
         public LongVariableNamesRecord LongVariableNamesRecord { get; set; }
         public VeryLongStringRecord VeryLongStringRecord { get; set; }
         public MultipleResponseSetsRecord MultipleResponseSetsRecord { get; set; }
+        public Subtype16Record Subtype16Record { get; set; }
+        public CodePageRecord CodePageRecord { get; set; }
+        public LongValueLabelsRecord LongValueLabelsRecord { get; set; }
 
         // DataRecords
         public IEnumerable<DataRecord> DataRecords { get; set; }
@@ -126,6 +129,18 @@ namespace IAV.Data.SPSS.SavFile
                     case RecordSubType.MultipleResponseSetsRecord:
                         this.MultipleResponseSetsRecord = new MultipleResponseSetsRecord(this);
                         this.MultipleResponseSetsRecord.ReadFromInfoRecord(infoRecord);
+                        break;
+                    case RecordSubType.Subtype16Record:
+                        this.Subtype16Record = new Subtype16Record(this);
+                        this.Subtype16Record.ReadFromInfoRecord(infoRecord);
+                        break;
+                    case RecordSubType.CodePageRecord:
+                        this.CodePageRecord = new CodePageRecord(this);
+                        this.CodePageRecord.ReadFromInfoRecord(infoRecord);
+                        break;
+                    case RecordSubType.LongValueLabelsRecord:
+                        this.LongValueLabelsRecord = new LongValueLabelsRecord(this);
+                        this.LongValueLabelsRecord.ReadFromInfoRecord(infoRecord);
                         break;
                     default:
                         break;

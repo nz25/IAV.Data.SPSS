@@ -97,10 +97,10 @@ namespace IAV.Data.SPSS
                 DataType dt = this.Variables[variableIndex].DataType;
 
                 List<ValueLabel> ValueLabels = new List<ValueLabel>();
-                foreach (RawValueLabel rvl in vlr.ValueLabels)
+                foreach (ShortValueLabel rvl in vlr.ValueLabels)
                 {
                     ValueLabel vl = new ValueLabel();
-                    vl.Value = (dt == DataType.Numeric) ? (object)BitConverter.ToDouble(rvl.ByteArrayValue, 0) : (object)Encoding.Default.GetString(rvl.ByteArrayValue);
+                    vl.Value = (dt == DataType.Numeric) ? (object)rvl.NumericValue : (object)rvl.StringValue;
                     vl.Label = rvl.Label.Trim();
                     ValueLabels.Add(vl);
                 }
