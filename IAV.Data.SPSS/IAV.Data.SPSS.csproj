@@ -39,49 +39,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MissingValuesType.cs" />
-    <Compile Include="SavFile\CharacterCode.cs" />
+    <Compile Include="Enum\MissingValuesType.cs" />
+    <Compile Include="Enum\CharacterCode.cs" />
+    <Compile Include="Enum\VariableGroupType.cs" />
     <Compile Include="SavFile\CodePageRecord.cs" />
     <Compile Include="SavFile\DataRecord.cs" />
-    <Compile Include="SavFile\CompressionCode.cs" />
+    <Compile Include="Enum\CompressionCode.cs" />
     <Compile Include="SavFile\LongValueLabel.cs" />
     <Compile Include="SavFile\LongValueLabelsRecord.cs" />
     <Compile Include="SavFile\LongVariableWithValueLabels.cs" />
-    <Compile Include="SavFile\MissingValueCount.cs" />
+    <Compile Include="Enum\MissingValueCount.cs" />
     <Compile Include="SavFile\MultipleResponseSet.cs" />
     <Compile Include="SavFile\ShortValueLabel.cs" />
     <Compile Include="Dataset.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SavFile\Alignment.cs" />
+    <Compile Include="Enum\Alignment.cs" />
     <Compile Include="SavFile\DocumentRecord.cs" />
-    <Compile Include="SavFile\Endianness.cs" />
-    <Compile Include="SavFile\FloatingPointRepresentation.cs" />
+    <Compile Include="Enum\Endianness.cs" />
+    <Compile Include="Enum\FloatingPointRepresentation.cs" />
     <Compile Include="SavFile\InfoRecord.cs" />
     <Compile Include="SavFile\MachineFloatingPointInfoRecord.cs" />
     <Compile Include="SavFile\MachineIntegerInfoRecord.cs" />
-    <Compile Include="SavFile\RecordSubType.cs" />
-    <Compile Include="SavFile\MeasurementType.cs" />
+    <Compile Include="Enum\RecordSubType.cs" />
+    <Compile Include="Enum\MeasurementType.cs" />
     <Compile Include="SavFile\LongVariableNamesRecord.cs" />
-    <Compile Include="SavFile\Subtype16Record.cs" />
     <Compile Include="SavFile\VeryLongStringRecord.cs" />
     <Compile Include="SavFile\MultipleResponseSetsRecord.cs" />
     <Compile Include="SavFile\ValueLabelVariablesRecord.cs" />
-    <Compile Include="SavFile\RecordType.cs" />
+    <Compile Include="Enum\RecordType.cs" />
     <Compile Include="SavFile\FileHeaderRecord.cs" />
     <Compile Include="SavFile\File.cs" />
     <Compile Include="SavFile\ValueLabelsRecord.cs" />
-    <Compile Include="SavFile\VariableType.cs" />
+    <Compile Include="Enum\VariableType.cs" />
     <Compile Include="SavFile\VariableDisplayParameterRecord.cs" />
     <Compile Include="SavFile\VariableFormat.cs" />
-    <Compile Include="SavFile\VariableFormatType.cs" />
+    <Compile Include="Enum\VariableFormatType.cs" />
     <Compile Include="SavFile\VariableParameters.cs" />
     <Compile Include="SavFile\VariableRecord.cs" />
     <Compile Include="ValueLabel.cs" />
     <Compile Include="Variable.cs" />
-    <Compile Include="DataType.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="SavFile\SavFile.cd" />
+    <Compile Include="Enum\DataType.cs" />
+    <Compile Include="VariableGroup.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

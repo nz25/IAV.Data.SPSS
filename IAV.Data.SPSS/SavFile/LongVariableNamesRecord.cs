@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IAV.Data.SPSS.Enum;
 
 namespace IAV.Data.SPSS.SavFile
 {
     public class LongVariableNamesRecord
     {
-        public Dictionary<string, string> VarNamePairs { get; set; }
+        public Dictionary<string, string> LongNamebyShortName { get; set; }
         public File File { get; set; }
 
         public LongVariableNamesRecord(File file)
@@ -27,11 +28,11 @@ namespace IAV.Data.SPSS.SavFile
             var dictionaryString = Encoding.Default.GetString(originalBytes); // TO DO: Globalize Encoding??
             // split on tabs:
             var entries = dictionaryString.Split('\t');
-            this.VarNamePairs = new Dictionary<string, string>();
+            this.LongNamebyShortName = new Dictionary<string, string>();
             foreach (var entry in entries)
             {
                 var values = entry.Split('=');
-                this.VarNamePairs.Add(values[0], values[1]);
+                this.LongNamebyShortName.Add(values[0], values[1]);
             }
 
         }

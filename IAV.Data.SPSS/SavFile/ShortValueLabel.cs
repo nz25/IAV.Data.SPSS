@@ -23,7 +23,7 @@ namespace IAV.Data.SPSS.SavFile
             get { return Encoding.Default.GetString(_byteArrayValue); }
         }
 
-        public double  NumericValue
+        public double NumericValue
         {
             get { return BitConverter.ToDouble(_byteArrayValue, 0); }
         }

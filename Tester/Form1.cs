@@ -25,7 +25,7 @@ namespace Tester
         {
 
             // READING
-            FileStream s = new FileStream("d:\\ExampleDataset.sav", FileMode.Open);
+            FileStream s = new FileStream("d:\\prepare DR Commerzbank AT.sav", FileMode.Open);
             IAV.Data.SPSS.SavFile.File savFile = new IAV.Data.SPSS.SavFile.File();
             savFile.ReadFromStream(s);
 
@@ -43,8 +43,6 @@ namespace Tester
             //FileStream t = new FileStream("d:\\test.sav", FileMode.Create);
             //savFile.WriteToStream(t);
 
-            var originalBytes = (from item in savFile.InfoRecords[6].Items select item[0]).ToArray();
-            var xxx = Encoding.Default.GetString(originalBytes);
             MessageBox.Show("OK");
         }
 

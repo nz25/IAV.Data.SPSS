@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IAV.Data.SPSS.SavFile;
+using IAV.Data.SPSS.Enum;
 
 namespace IAV.Data.SPSS
 {
@@ -13,6 +14,7 @@ namespace IAV.Data.SPSS
         public DataType DataType { get; set; }
         public int StringWidth { get; set; }
         public int VariableRecordIndex { get; set; }
+        public int VariableIndex { get; set; }
         public int VariableRecordLength { get; set; }
         public bool HasVariableLabel { get; set; }
         public MissingValuesType MissingValuesType { get; set; }
@@ -20,8 +22,20 @@ namespace IAV.Data.SPSS
         public VariableFormat PrintFormat { get; set; }
         public VariableFormat WriteFormat { get; set; }
         public string ShortName { get; set; }
+        public string Name { get; set; }
         public string Label { get; set; }
+        public MeasurementType MeasurementType { get; set; }
+        public int Width { get; set; }
+        public int VeryLongStringWidth { get; set; }
+        public Alignment Alignment { get; set; }
+
         public List<ValueLabel> ValueLabels { get; set; }
+
+        public Variable(Dataset ds)
+        {
+            this.MissingValues = new List<double>();
+            this.ValueLabels = new List<ValueLabel>();
+        }
 
         public void ReadFromVariableRecord(VariableRecord vr, int variableRecordIndex)
         {
@@ -38,10 +52,11 @@ namespace IAV.Data.SPSS
             this.Label = this.HasVariableLabel ? vr.Label.Trim() : vr.Label;
         }
 
-        public Variable()
+        public void ReadFromVariableParameters(VariableParameters vp)
         {
-            this.MissingValues = new List<double>();
-            this.ValueLabels = new List<ValueLabel>();
+            this.MeasurementType = vp.MeasurementType;
+            this.Width = vp.Width;
+            this.Alignment = vp.Alignment;
         }
 
         private MissingValuesType GetMissingValueTypeFromMissingValueCount(MissingValueCount mvc)
