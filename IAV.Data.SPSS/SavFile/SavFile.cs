@@ -41,10 +41,21 @@ namespace IAV.Data.SPSS.SavFile
         public void ReadFromStream(FileStream stream)
         {
             this.Reader = new BinaryReader(stream, Encoding.Default);
-
             this.ReadDictionary();
             this.ParseInfoRecords();
-            this.DataRecords = this.GetDataRecords();
+
+            //Read DataRecords
+            this.Reader.ReadInt32(); // Filler record
+            if (this.FileHeaderRecord.Compressed == 1)
+            {
+                this.DataRecords = this.ReadCompressedDataRecords();            
+            }
+            else
+            {
+                this.DataRecords = this.ReadUncompressedDataRecords();
+            }
+
+            this.Reader.Dispose();
         }
 
         private void ReadDictionary()
@@ -122,21 +133,73 @@ namespace IAV.Data.SPSS.SavFile
             }
         }
 
-        private IEnumerable<DataRecord> GetDataRecords()
+        private IEnumerable<DataRecord> ReadCompressedDataRecords()
         {
-            // Filler record
-            this.Reader.ReadInt32();
+          
+            int variableIndex = 0;
+            int variableCount = this.VariableRecords.Count;
+            byte[] eightSpacesBytes = Encoding.Default.GetBytes("        ");
+            byte[] systemMissingBytes = BitConverter.GetBytes(this.MachineFloatingPointInfoRecord.SystemMissingValue);
 
-            //int caseNumber = 0;
-            byte[] leftOver = new byte[0];
+            DataRecord dr = new DataRecord(this);
 
-            // Loops through case data
             while (this.Reader.BaseStream.Position != this.Reader.BaseStream.Length)
             {
-                //caseNumber++;
+
+                byte[] commandBytes = this.Reader.ReadBytes(8);
+
+                for (int i = 0; i < commandBytes.Length; i++)
+                {
+                    switch ((CommandByte)commandBytes[i])
+                    {
+                        case CommandByte.Ignored:
+                            break;
+                        case CommandByte.EndOfFile:
+                            break;
+                        case CommandByte.NotCompressibleValue:
+                            byte[] notCompressibleValue = this.Reader.ReadBytes(8);
+                            dr.Values[variableIndex] = notCompressibleValue;
+                            variableIndex++;
+                            break;
+                        case CommandByte.EightSpacesString:                      
+                            dr.Values[variableIndex] = eightSpacesBytes;
+                            variableIndex++;
+                            break;
+                        case CommandByte.SystemMissingValue:
+                            dr.Values[variableIndex] = systemMissingBytes;
+                            variableIndex++;
+                            break;
+                        default: // 1 - 251
+                            byte[] numericValueBytes = BitConverter.GetBytes((double)(commandBytes[i] - this.FileHeaderRecord.Bias));
+                            dr.Values[variableIndex] = numericValueBytes;
+                            variableIndex++;
+                            break;
+                    }
+
+                    if (variableIndex == variableCount)
+                    {
+                        yield return dr;
+                        variableIndex = 0;
+                        dr = new DataRecord(this);
+                    }
+                }                    
+            }
+        }
+
+        private IEnumerable<DataRecord> ReadUncompressedDataRecords()
+        {
+
+            int variableCount = this.VariableRecords.Count;
+
+            while (this.Reader.BaseStream.Position != this.Reader.BaseStream.Length)
+            {
+                // in uncompressed file all values are stored in 8 byte chunks
                 DataRecord dr = new DataRecord(this);
-                dr.ReadFromStream(leftOver);// leftover bytes from the previous data record are passed to the current one for processing
-                leftOver = dr.LeftOver; //leftover bytes from current data record are saved temporarily to be processed by the next data record
+                for (int variableIndex = 0; variableIndex < variableCount; variableIndex++)
+                {
+                    byte[] value = this.Reader.ReadBytes(8);
+                    dr.Values[variableIndex] = value;
+                }
                 yield return dr;
             }
         }
@@ -144,9 +207,20 @@ namespace IAV.Data.SPSS.SavFile
         public void WriteToStream(FileStream stream)
         {
             this.Writer = new BinaryWriter(stream, Encoding.Default);
-
             this.WriteDictionary();
-            this.WriteDataRecords();
+
+            // Data records
+            this.Writer.Write(0);   // Filler record
+            if (this.FileHeaderRecord.Compressed == 1)
+            {
+                this.WriteCompressedDataRecords();
+            }
+            else
+            {
+                this.WriteUncompressedDataRecords();
+            }
+
+            this.Writer.Dispose();
         }
 
         private void WriteDictionary()
@@ -173,20 +247,78 @@ namespace IAV.Data.SPSS.SavFile
 
         }
 
-        private void WriteDataRecords()
+        private void WriteCompressedDataRecords()
         {
+            int variableCount = this.VariableRecords.Count;
+            byte[] eightSpacesBytes = Encoding.Default.GetBytes("        ");
+            byte[] systemMissingBytes = BitConverter.GetBytes(this.MachineFloatingPointInfoRecord.SystemMissingValue);
+            List<byte> commandBytes = new List<byte>();
+            List<byte[]> notCompressibleValues = new List<byte[]>();
 
-            // Filler record
-            this.Writer.Write(0);
-
-            byte[] leftOver = new byte[0];
             foreach (DataRecord dr in this.DataRecords)
             {
-                dr.WriteToStream(leftOver);
-                leftOver = dr.LeftOver;
+                for (int i = 0; i < variableCount; i++)
+                {
+                    double numericValue = BitConverter.ToDouble(dr.Values[i], 0) + this.FileHeaderRecord.Bias;
+
+                    if (dr.Values[i].SequenceEqual(eightSpacesBytes))
+                    {
+                        commandBytes.Add(254);
+                    }
+                    else if (dr.Values[i].SequenceEqual(systemMissingBytes))
+                    {
+                        commandBytes.Add(255);
+                    }
+                    else if (this.VariableRecords[i].Type == VariableType.Numeric && 1 <= numericValue && numericValue <= 251)
+                    {
+                        commandBytes.Add((byte)numericValue);
+                    }
+                    else // Value is not compressible
+                    {
+                        commandBytes.Add(253);
+                        notCompressibleValues.Add(dr.Values[i]);
+                    }
+
+                    if (commandBytes.Count == 8)
+                    {
+                        this.Writer.Write(commandBytes.ToArray());
+                        foreach (byte[] value in notCompressibleValues)
+                        {
+                            this.Writer.Write(value);
+                        }
+
+                        commandBytes.Clear();
+                        notCompressibleValues.Clear();
+                    }
+                }
+            }
+
+            if (commandBytes.Count > 0)
+            {
+                // pad bytes with 0s to get to 8 bytes block
+                for (int i = commandBytes.Count; i < 8; i++)
+                {
+                    commandBytes.Add(0);
+                }
+                this.Writer.Write(commandBytes.ToArray());
+                foreach (byte[] value in notCompressibleValues)
+                {
+                    this.Writer.Write(value);
+                }
+                commandBytes.Clear();
+                notCompressibleValues.Clear();
             }
         }
 
-
+        private void WriteUncompressedDataRecords()
+        {
+            foreach (DataRecord dr in this.DataRecords)
+            {
+                foreach (byte[] value in dr.Values)
+                {
+                    this.Writer.Write(value);
+                }
+            }
+        }
     }
 }

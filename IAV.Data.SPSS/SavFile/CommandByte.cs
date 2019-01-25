@@ -11,7 +11,7 @@ namespace IAV.Data.SPSS.SavFile
         Ignored = 0,
         EndOfFile = 252,
         NotCompressibleValue = 253,
-        AllSpacesString = 254,
+        EightSpacesString = 254,
         SystemMissingValue = 255
     }
 }
