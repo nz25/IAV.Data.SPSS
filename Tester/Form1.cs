@@ -8,8 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using IAV.Data.SPSS;
-using IAV.Data.SPSS.RecordsLayer;
+using IAV.Data.SPSS.IO;
+
 namespace Tester
 {
     public partial class Form1 : Form
@@ -24,10 +24,17 @@ namespace Tester
 
             FileStream s = new FileStream("d:\\prepare DR Commerzbank AT.sav", FileMode.Open);
             //FileStream s = new FileStream("d:\\prepare DR Commerzbank AT_uncompressed.sav", FileMode.Open);
-            Parser p = new Parser(s);
-            p.ReadFromStream();
+
+            StreamToFile s2f = new StreamToFile(s);
+            s2f.ReadFromStream();
+
+            int recordcount = 0;
+            foreach (var dataRecord in s2f.SavFile.DataRecords)
+            {
+                recordcount++;                
+            }
             
-            MessageBox.Show(p.SystemFile.VariableRecords.Count.ToString());
+            MessageBox.Show(recordcount.ToString());
         }
     }
 }
