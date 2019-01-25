@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "x:\\dev\\data_formats\\spss\\IAV.Data.SPSS\\IAV.Data.SPSS\\IAV.Data.SPSS.csproj",
+  "TargetFramework": "v4.5",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

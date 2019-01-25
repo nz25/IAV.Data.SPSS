@@ -1,0 +1,11 @@
+c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\bin\Debug\Tester.exe.config
+c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\obj\Debug\Tester.Form1.resources
+c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\obj\Debug\Tester.Properties.Resources.resources
+c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\obj\Debug\Tester.csproj.GenerateResource.Cache
+c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\bin\Debug\Tester.exe
+c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\bin\Debug\Tester.pdb
+c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\bin\Debug\IAV.Data.SPSS.dll
+c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\bin\Debug\IAV.Data.SPSS.pdb
+c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\obj\Debug\Tester.exe
+c:\users\zorenkod\documents\visual studio 2013\Projects\IAV.Data.SPSS\Tester\obj\Debug\Tester.pdb

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7617FC4F-E998-48A8-9E12-0481FBC07D2D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IAV.Data.SPSS</RootNamespace>
+    <AssemblyName>IAV.Data.SPSS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RecordsLayer\DataRecord.cs" />
+    <Compile Include="RecordsLayer\CommandByte.cs" />
+    <Compile Include="RecordsLayer\MultipleResponseSet.cs" />
+    <Compile Include="RecordsLayer\ValueLabel.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordsLayer\Alignment.cs" />
+    <Compile Include="RecordsLayer\DocumentRecord.cs" />
+    <Compile Include="RecordsLayer\Endianness.cs" />
+    <Compile Include="RecordsLayer\FloatingPointRepresentation.cs" />
+    <Compile Include="RecordsLayer\InfoRecord.cs" />
+    <Compile Include="RecordsLayer\MachineFloatingPointInfoRecord.cs" />
+    <Compile Include="RecordsLayer\MachineIntegerInfoRecord.cs" />
+    <Compile Include="RecordsLayer\RecordSubType.cs" />
+    <Compile Include="RecordsLayer\MeasurementType.cs" />
+    <Compile Include="RecordsLayer\LongVariableNamesRecord.cs" />
+    <Compile Include="RecordsLayer\VeryLongStringRecord.cs" />
+    <Compile Include="RecordsLayer\MultipleResponseSetsRecord.cs" />
+    <Compile Include="RecordsLayer\ValueLabelVariablesRecord.cs" />
+    <Compile Include="RecordsLayer\RecordType.cs" />
+    <Compile Include="RecordsLayer\FileHeaderRecord.cs" />
+    <Compile Include="RecordsLayer\SystemFile.cs" />
+    <Compile Include="RecordsLayer\ValueLabelsRecord.cs" />
+    <Compile Include="RecordsLayer\VariableDataType.cs" />
+    <Compile Include="RecordsLayer\VariableDisplayParameterRecord.cs" />
+    <Compile Include="RecordsLayer\VariableFormat.cs" />
+    <Compile Include="RecordsLayer\VariableFormatType.cs" />
+    <Compile Include="RecordsLayer\VariableParameters.cs" />
+    <Compile Include="RecordsLayer\VariableRecord.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
