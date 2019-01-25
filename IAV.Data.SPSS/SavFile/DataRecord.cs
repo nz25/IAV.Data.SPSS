@@ -19,22 +19,24 @@ namespace IAV.Data.SPSS.SavFile
             this.Values = new byte[file.VariableRecords.Count][];
         }
 
-        public void ReadFromStream (BinaryReader r, byte[] leftOver)
+        public void ReadFromStream (byte[] leftOver)
         {
+            BinaryReader r = this.File.Reader;
             this.LeftOver = leftOver;
 
             if (this.File.FileHeaderRecord.Compressed == 1)
             {
-                this.ReadFromCompressedFile(r);
+                this.ReadFromCompressedFile();
             }
             else
             {
-                this.ReadFromUncompressedFile(r);
+                this.ReadFromUncompressedFile();
             }
-        }
+        }        
 
-        private void ReadFromUncompressedFile(BinaryReader r)
+        private void ReadFromUncompressedFile()
         {
+            BinaryReader r = this.File.Reader;
             // in uncompressed file all values are stored in 8 byte chunks
             int variableCount = this.File.VariableRecords.Count;
             for (int currentVariable = 0; currentVariable < variableCount; currentVariable++)
@@ -44,8 +46,10 @@ namespace IAV.Data.SPSS.SavFile
             }
         }
 
-        private void ReadFromCompressedFile(BinaryReader r)
+        private void ReadFromCompressedFile()
         {
+            BinaryReader r = this.File.Reader;
+
             int currentVariable = 0;
             int variableCount = this.File.VariableRecords.Count;
             double bias = this.File.FileHeaderRecord.Bias;
@@ -112,6 +116,37 @@ namespace IAV.Data.SPSS.SavFile
                     }
                 }
             }
+        }
+
+        public void WriteToStream(byte[] leftOver)
+        {
+            BinaryWriter w = this.File.Writer;
+            this.LeftOver = leftOver;
+
+            if (this.File.FileHeaderRecord.Compressed == 1)
+            {
+                this.WriteToCompressedFile();
+            }
+            else
+            {
+                this.WriteToUncompressedFile();
+            }
+        }
+
+        private void WriteToUncompressedFile()
+        {
+            BinaryWriter w = this.File.Writer;
+            // in uncompressed file all values are stored in 8 byte chunks
+            int variableCount = this.File.VariableRecords.Count;
+            foreach (byte[] value in this.Values)
+            {
+                w.Write(value);
+            }
+        }
+
+        private void WriteToCompressedFile()
+        {
+            throw new NotImplementedException();
         }
     }
 }

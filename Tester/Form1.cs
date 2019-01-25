@@ -25,7 +25,7 @@ namespace Tester
 
             // READING
 
-            FileStream s = new FileStream("d:\\prepare DR Commerzbank AT.sav", FileMode.Open);
+            FileStream s = new FileStream("d:\\prepare DR Commerzbank AT_uncompressed.sav", FileMode.Open);
             //FileStream s = new FileStream("d:\\prepare DR Commerzbank AT_uncompressed.sav", FileMode.Open);
 
             SavFile savFile = new SavFile();
@@ -39,10 +39,20 @@ namespace Tester
             
             //MessageBox.Show(recordcount.ToString());
 
+            //CopyFileStream(s, 0, 729493);
             // WRITING
             FileStream t = new FileStream("d:\\test.sav", FileMode.Create);
             savFile.WriteToStream(t);
 
-        }
+            }
+
+        //private void CopyFileStream(FileStream stream, Int32 start, Int32 length)
+        //{
+        //    FileStream copy = new FileStream("d:\\copy.sav", FileMode.Create);
+        //    stream.Seek(start, 0);
+        //    stream.CopyTo(copy);
+        //    copy.SetLength(length);
+        //}
+
     }
 }

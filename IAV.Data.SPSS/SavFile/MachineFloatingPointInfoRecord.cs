@@ -30,6 +30,19 @@ namespace IAV.Data.SPSS.SavFile
             this.LowestMissingValue = BitConverter.ToDouble(ir.Items[2], 0);
         }
 
+        public InfoRecord ConvertToInfoRecord()
+        {
+            InfoRecord ir = new InfoRecord(this.File);
+            ir.RecordSubType = RecordSubType.MachineFloatingPointInfoRecord;
+            ir.ItemSize = 8;
+            ir.ItemCount = 3;
+            ir.Items = new List<byte[]>();
+            ir.Items.Add(BitConverter.GetBytes(this.SystemMissingValue));
+            ir.Items.Add(BitConverter.GetBytes(this.HighestMissingValue));
+            ir.Items.Add(BitConverter.GetBytes(this.LowestMissingValue));
 
+            return ir;
+
+        }
     }
 }

@@ -30,8 +30,9 @@ namespace IAV.Data.SPSS.SavFile
             this.RecordType = RecordType.FileHeaderRecord;
         }
 
-        public void ReadFromStream (BinaryReader r)
+        public void ReadFromStream ()
         {
+            BinaryReader r = this.File.Reader;
             this.ProductName = new String(r.ReadChars(60));
             this.LayoutCode = r.ReadInt32();
             this.NominalCaseSize = r.ReadInt32();
@@ -45,8 +46,9 @@ namespace IAV.Data.SPSS.SavFile
             this.Padding = new String(r.ReadChars(3));
         }
 
-        public void WriteToStream(BinaryWriter w)
+        public void WriteToStream()
         {
+            BinaryWriter w = this.File.Writer;
             w.Write((Int32)this.RecordType);
             w.Write(this.ProductName.ToCharArray());
             w.Write(this.LayoutCode);

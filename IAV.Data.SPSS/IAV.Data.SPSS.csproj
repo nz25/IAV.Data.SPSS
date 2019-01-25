@@ -45,7 +45,7 @@
     <Compile Include="SavFile\MissingValueCount.cs" />
     <Compile Include="SavFile\MultipleResponseSet.cs" />
     <Compile Include="SavFile\ValueLabel.cs" />
-    <Compile Include="Objects\Dataset.cs" />
+    <Compile Include="Dataset.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SavFile\Alignment.cs" />
     <Compile Include="SavFile\DocumentRecord.cs" />
@@ -71,7 +71,9 @@
     <Compile Include="SavFile\VariableParameters.cs" />
     <Compile Include="SavFile\VariableRecord.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="SavFile.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

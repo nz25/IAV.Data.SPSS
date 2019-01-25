@@ -22,8 +22,9 @@ namespace IAV.Data.SPSS.SavFile
             this.File = file;
         }
 
-        public void ReadFromStream(BinaryReader r)
+        public void ReadFromStream()
         {
+            BinaryReader r = this.File.Reader;
             this.ValueLabelCount = r.ReadInt32();
             this.ValueLabels = new List<ValueLabel>();
 
@@ -50,8 +51,9 @@ namespace IAV.Data.SPSS.SavFile
              
         }
 
-        public void WriteToStream(BinaryWriter w)
+        public void WriteToStream()
         {
+            BinaryWriter w = this.File.Writer;
             w.Write((Int32)this.RecordType);
             w.Write(this.ValueLabelCount);
 

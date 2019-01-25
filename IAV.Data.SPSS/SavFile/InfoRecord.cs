@@ -22,8 +22,9 @@ namespace IAV.Data.SPSS.SavFile
             this.File = file;
         }
 
-        public void ReadFromStream(BinaryReader r)
+        public void ReadFromStream()
         {
+            BinaryReader r = this.File.Reader;
             this.RecordSubType = (RecordSubType)r.ReadInt32();
             this.ItemSize = r.ReadInt32();
             this.ItemCount = r.ReadInt32();
@@ -31,6 +32,19 @@ namespace IAV.Data.SPSS.SavFile
             for (int i = 0; i < this.ItemCount; i++)
             {
                 this.Items.Add(r.ReadBytes(this.ItemSize));
+            }
+        }
+
+        public void WriteToStream()
+        {
+            BinaryWriter w = this.File.Writer;
+            w.Write((Int32)this.RecordType);
+            w.Write((Int32)this.RecordSubType);
+            w.Write(this.ItemSize);
+            w.Write(this.ItemCount);
+            foreach (byte[] item in this.Items)
+            {
+                w.Write(item);
             }
         }
     }

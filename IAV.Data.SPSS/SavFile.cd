@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="IAV.Data.SPSS.SavFile.SavFile" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAgAAQAAEgAgCUAACBAAQIQAAgAAAABAAQAkAAAA=</HashCode>
+      <FileName>SavFile\SavFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.FileHeaderRecord" Collapsed="true">
+    <Position X="1" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAEQQAAAAggAAACAAAAACAEAAAAAAMAAAEYACA=</HashCode>
+      <FileName>SavFile\FileHeaderRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.VariableRecord" Collapsed="true">
+    <Position X="1" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEAAAAAAUAAAAAgAAAAAAAQAAAAEAAAgAVAAAAMAAAA=</HashCode>
+      <FileName>SavFile\VariableRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.ValueLabelsRecord" Collapsed="true">
+    <Position X="1" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQBAAAAgAAAAAAAAAAAAEAAAIAAAAAAEAAQA=</HashCode>
+      <FileName>SavFile\ValueLabelsRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.DocumentRecord" Collapsed="true">
+    <Position X="1" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAgAAAAAAAQAAAAEAAACAAAAAAEAAAA=</HashCode>
+      <FileName>SavFile\DocumentRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.InfoRecord" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAQAAACAgAAAABAAAAAEAEAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>SavFile\InfoRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.MachineIntegerInfoRecord" Collapsed="true">
+    <Position X="4" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAABCAAAAABAAAQAAAAAgAgEAAKAAAAAAAIAAAA=</HashCode>
+      <FileName>SavFile\MachineIntegerInfoRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.MachineFloatingPointInfoRecord" Collapsed="true">
+    <Position X="4" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAgAAAAAAQAAAEAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\MachineFloatingPointInfoRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.VariableDisplayParameterRecord" Collapsed="true">
+    <Position X="4" Y="2.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAEAAAgAAAAAAAAAAAAAAAAEAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\VariableDisplayParameterRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.LongVariableNamesRecord" Collapsed="true">
+    <Position X="4" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAEAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\LongVariableNamesRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.VeryLongStringRecord" Collapsed="true">
+    <Position X="4" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAEAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\VeryLongStringRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.MultipleResponseSetsRecord" Collapsed="true">
+    <Position X="4" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAEAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\MultipleResponseSetsRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.DataRecord" Collapsed="true">
+    <Position X="1" Y="4.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAgAIAAAABAAAAAEAAAAAAAgAAACEIA=</HashCode>
+      <FileName>SavFile\DataRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

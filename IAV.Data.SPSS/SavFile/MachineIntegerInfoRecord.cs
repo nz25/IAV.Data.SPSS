@@ -40,5 +40,25 @@ namespace IAV.Data.SPSS.SavFile
             this.Endianness = (Endianness)BitConverter.ToInt32(ir.Items[6], 0);
             this.CharacterCode = (CharacterCode)BitConverter.ToInt32(ir.Items[7], 0);
         }
+
+        public InfoRecord ConvertToInfoRecord()
+        {
+            InfoRecord ir = new InfoRecord(this.File);
+            ir.RecordSubType = RecordSubType.MachineIntegerInfoRecord;
+            ir.ItemSize = 4;
+            ir.ItemCount = 8;
+            ir.Items = new List<byte[]>();
+            ir.Items.Add(BitConverter.GetBytes(this.VersionMajor));
+            ir.Items.Add(BitConverter.GetBytes(this.VersionMinor));
+            ir.Items.Add(BitConverter.GetBytes(this.VersionRevision));
+            ir.Items.Add(BitConverter.GetBytes(this.MachineCode));
+            ir.Items.Add(BitConverter.GetBytes((Int32)this.FloatingPointRepresentation));
+            ir.Items.Add(BitConverter.GetBytes(this.CompressionCode));
+            ir.Items.Add(BitConverter.GetBytes((Int32)this.Endianness));
+            ir.Items.Add(BitConverter.GetBytes((Int32)this.CharacterCode));
+
+            return ir;
+
+        }
     }
 }

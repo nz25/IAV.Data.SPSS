@@ -29,8 +29,9 @@ namespace IAV.Data.SPSS.SavFile
             this.WriteFormat = new VariableFormat();
         }
 
-        public void ReadFromStream(BinaryReader r)
+        public void ReadFromStream()
         {
+            BinaryReader r = this.File.Reader;
             this.Type = (VariableType)r.ReadInt32();
             this.HasVariableLabel = r.ReadInt32();
             this.MissingValueCount = (MissingValueCount)r.ReadInt32();
@@ -54,8 +55,9 @@ namespace IAV.Data.SPSS.SavFile
             }
         }
 
-        public void WriteToStream(BinaryWriter w)
+        public void WriteToStream()
         {
+            BinaryWriter w = this.File.Writer;
             w.Write((Int32)this.RecordType);
             w.Write((Int32)this.Type);
             w.Write(this.HasVariableLabel);

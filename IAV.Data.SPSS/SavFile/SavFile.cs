@@ -10,8 +10,8 @@ namespace IAV.Data.SPSS.SavFile
     public class SavFile
     {
         // Stream
-        private BinaryReader Reader { get; set; }
-        private BinaryWriter Writer { get; set; }
+        public BinaryReader Reader { get; set; }
+        public BinaryWriter Writer { get; set; }
 
         // Records
         public FileHeaderRecord FileHeaderRecord { get; set; }
@@ -56,26 +56,26 @@ namespace IAV.Data.SPSS.SavFile
                 {
                     case RecordType.FileHeaderRecord:
                         this.FileHeaderRecord = new FileHeaderRecord(this);
-                        this.FileHeaderRecord.ReadFromStream(this.Reader);
+                        this.FileHeaderRecord.ReadFromStream();
                         break;
                     case RecordType.VariableRecord:
                         VariableRecord v = new VariableRecord(this);
-                        v.ReadFromStream(this.Reader);
+                        v.ReadFromStream();
                         this.VariableRecords.Add(v);
                         break;
                     case RecordType.ValueLabelRecord:
                         ValueLabelsRecord vl = new ValueLabelsRecord(this);
-                        vl.ReadFromStream(this.Reader);
+                        vl.ReadFromStream();
                         this.ValueLabelsRecords.Add(vl);
                         // ValueLabelVariablesRecord always follows ValueLabelsRecord, that's why it is stored inside of it.
                         break;
                     case RecordType.DocumentRecord:
                         this.DocumentRecord = new DocumentRecord(this);
-                        this.DocumentRecord.ReadFromStream(this.Reader);
+                        this.DocumentRecord.ReadFromStream();
                         break;
                     case RecordType.InfoRecord:
                         InfoRecord ir = new InfoRecord(this);
-                        ir.ReadFromStream(this.Reader);
+                        ir.ReadFromStream();
                         this.InfoRecords.Add(ir);
                         break;
                     default:
@@ -127,45 +127,64 @@ namespace IAV.Data.SPSS.SavFile
             // Filler record
             this.Reader.ReadInt32();
 
-            int caseNumber = 0;
+            //int caseNumber = 0;
             byte[] leftOver = new byte[0];
 
             // Loops through case data
             while (this.Reader.BaseStream.Position != this.Reader.BaseStream.Length)
             {
-                caseNumber++;
-                DataRecord dr = this.ReadNextDataRecord(leftOver); // leftover bytes from the previous data record are passed to the current one for processing
+                //caseNumber++;
+                DataRecord dr = new DataRecord(this);
+                dr.ReadFromStream(leftOver);// leftover bytes from the previous data record are passed to the current one for processing
                 leftOver = dr.LeftOver; //leftover bytes from current data record are saved temporarily to be processed by the next data record
                 yield return dr;
             }
-        }
-
-        private DataRecord ReadNextDataRecord(byte[] leftOver)
-        {
-            DataRecord dr = new DataRecord(this);
-            dr.ReadFromStream(this.Reader, leftOver);
-            return dr;
         }
 
         public void WriteToStream(FileStream stream)
         {
             this.Writer = new BinaryWriter(stream, Encoding.Default);
 
-            this.WriteDictionary(this.Writer);
+            this.WriteDictionary();
             this.WriteDataRecords();
         }
 
-        private void WriteDictionary(BinaryWriter w)
+        private void WriteDictionary()
         {
-            this.FileHeaderRecord.WriteToStream(w);
+            this.FileHeaderRecord.WriteToStream();
             foreach (VariableRecord vr in this.VariableRecords)
             {
-                vr.WriteToStream(w);
+                vr.WriteToStream();
             }
+            foreach (ValueLabelsRecord vl in this.ValueLabelsRecords)
+            {
+                vl.WriteToStream();
+            }
+            if (this.DocumentRecord != null)
+            {
+                this.DocumentRecord.WriteToStream();
+            }
+            foreach (InfoRecord ir in this.InfoRecords)
+            {
+                ir.WriteToStream();
+            }
+
+            this.Writer.Write((Int32)RecordType.DictionaryTerminationRecord);
+
         }
 
         private void WriteDataRecords()
         {
+
+            // Filler record
+            this.Writer.Write(0);
+
+            byte[] leftOver = new byte[0];
+            foreach (DataRecord dr in this.DataRecords)
+            {
+                dr.WriteToStream(leftOver);
+                leftOver = dr.LeftOver;
+            }
         }
 
 
