@@ -10,13 +10,13 @@ namespace IAV.Data.SPSS.SavFile
 {
     public class ValueLabelsRecord
     {
-        public SavFile File { get; set; }
+        public File File { get; set; }
         public RecordType RecordType { get; set; }
         public Int32 ValueLabelCount { get; set; }
-        public List<ValueLabel> ValueLabels { get; set; }
+        public List<RawValueLabel> ValueLabels { get; set; }
         public ValueLabelVariablesRecord ValueLabelVariablesRecord { get; set; }
 
-        public ValueLabelsRecord(SavFile file)
+        public ValueLabelsRecord(File file)
         {
             this.RecordType = RecordType.ValueLabelRecord;
             this.File = file;
@@ -26,11 +26,11 @@ namespace IAV.Data.SPSS.SavFile
         {
             BinaryReader r = this.File.Reader;
             this.ValueLabelCount = r.ReadInt32();
-            this.ValueLabels = new List<ValueLabel>();
+            this.ValueLabels = new List<RawValueLabel>();
 
             for (int i = 0; i < this.ValueLabelCount; i++)
             {
-                ValueLabel vl = new ValueLabel();
+                RawValueLabel vl = new RawValueLabel();
                 vl.ByteArrayValue = r.ReadBytes(8);
                 vl.LabelLength = r.ReadByte();
                 //Rounding up to nearest multiple of 8 bytes .
@@ -57,7 +57,7 @@ namespace IAV.Data.SPSS.SavFile
             w.Write((Int32)this.RecordType);
             w.Write(this.ValueLabelCount);
 
-            foreach (ValueLabel vl in this.ValueLabels)
+            foreach (RawValueLabel vl in this.ValueLabels)
             {
                 w.Write(vl.ByteArrayValue);
                 w.Write(vl.LabelLength);

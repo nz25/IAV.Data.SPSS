@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IAV.Data.SPSS;
 using IAV.Data.SPSS.SavFile;
+using System.Globalization;
 
 namespace Tester
 {
@@ -23,10 +25,13 @@ namespace Tester
         {
 
             // READING
-            FileStream s = new FileStream("d:\\prepare DR Commerzbank AT.sav", FileMode.Open);
-            SavFile savFile = new SavFile();
+            FileStream s = new FileStream("d:\\ExampleDataset.sav", FileMode.Open);
+            IAV.Data.SPSS.SavFile.File savFile = new IAV.Data.SPSS.SavFile.File();
             savFile.ReadFromStream(s);
 
+            IAV.Data.SPSS.Dataset ds = new IAV.Data.SPSS.Dataset();
+            ds.ReadFromSavFile(savFile);
+            
             //int recordcount = 0;
             //foreach (var dataRecord in savFile.DataRecords)
             //{
@@ -35,9 +40,11 @@ namespace Tester
             //MessageBox.Show(recordcount.ToString());
 
             // WRITING
-            FileStream t = new FileStream("d:\\test.sav", FileMode.Create);
-            savFile.WriteToStream(t);
+            //FileStream t = new FileStream("d:\\test.sav", FileMode.Create);
+            //savFile.WriteToStream(t);
 
+            // TO DO INFORECORD SUBTYPE 21 LONGVALUELABELS - VERSTEHEN
+            MessageBox.Show("OK");
         }
 
         //private void CopyFileStream(FileStream stream, Int32 start, Int32 length)

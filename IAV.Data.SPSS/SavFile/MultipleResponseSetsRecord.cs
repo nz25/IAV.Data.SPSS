@@ -9,9 +9,9 @@ namespace IAV.Data.SPSS.SavFile
     public class MultipleResponseSetsRecord
     {
         public List<MultipleResponseSet> MultipleResponseSets { get; set; }
-        public SavFile File { get; set; }
+        public File File { get; set; }
 
-        public MultipleResponseSetsRecord(SavFile file)
+        public MultipleResponseSetsRecord(File file)
         {
             this.File = file;
         }

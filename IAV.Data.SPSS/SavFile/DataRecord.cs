@@ -9,10 +9,10 @@ namespace IAV.Data.SPSS.SavFile
 {
     public class DataRecord
     {
-        public SavFile File { get; set; }
+        public File File { get; set; }
         public byte[][] Values { get; set; } // decompressed values - 8 bytes per variable record
         
-        public DataRecord(SavFile file)
+        public DataRecord(File file)
         {
             this.File = file;
             this.Values = new byte[file.VariableRecords.Count][];

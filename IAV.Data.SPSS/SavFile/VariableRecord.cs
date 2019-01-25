@@ -9,7 +9,7 @@ namespace IAV.Data.SPSS.SavFile
 {
     public class VariableRecord
     {
-        public SavFile File { get; set; }
+        public File File { get; set; }
         public RecordType RecordType { get; set; }
         public VariableType Type { get; set; }
         public Int32 HasVariableLabel { get; set; }
@@ -21,7 +21,7 @@ namespace IAV.Data.SPSS.SavFile
         public string Label { get; set; }
         public List<double> MissingValues { get; private set; }
 
-        public VariableRecord(SavFile file)
+        public VariableRecord(File file)
         {
             this.RecordType = RecordType.VariableRecord;
             this.File = file;

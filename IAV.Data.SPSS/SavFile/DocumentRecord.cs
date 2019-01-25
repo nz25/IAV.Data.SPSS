@@ -9,12 +9,12 @@ namespace IAV.Data.SPSS.SavFile
 {
     public class DocumentRecord
     {
-        public SavFile File { get; set; }
+        public File File { get; set; }
         public RecordType RecordType { get; set; }
         public Int32 LineCount { get; set; }
         public List<string> Lines { get; set; }
 
-        public DocumentRecord(SavFile file)
+        public DocumentRecord(File file)
         {
             this.RecordType = RecordType.DocumentRecord;
             this.File = file;

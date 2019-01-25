@@ -11,10 +11,10 @@ namespace IAV.Data.SPSS.SavFile
         public int ParameterCount { get; set; }
         public List<VariableParameters> VariableParameters { get; set; }
 
-        public SavFile File { get; set; }
+        public File File { get; set; }
 
 
-        public VariableDisplayParameterRecord(SavFile file)
+        public VariableDisplayParameterRecord(File file)
         {
             this.File = file;
         }

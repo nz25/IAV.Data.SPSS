@@ -9,11 +9,11 @@ namespace IAV.Data.SPSS.SavFile
     public class LongVariableNamesRecord
     {
         public Dictionary<string, string> VarNamePairs { get; set; }
-        public SavFile Records { get; set; }
+        public File File { get; set; }
 
-        public LongVariableNamesRecord(SavFile file)
+        public LongVariableNamesRecord(File file)
         {
-            this.Records = file;
+            this.File = file;
         }
 
         public void ReadFromInfoRecord(InfoRecord ir)

@@ -10,10 +10,10 @@ namespace IAV.Data.SPSS.SavFile
     {
         public Dictionary<string, string> StringLengths { get; set; }
 
-        public SavFile File { get; set; }
+        public File File { get; set; }
 
 
-        public VeryLongStringRecord(SavFile file)
+        public VeryLongStringRecord(File file)
         {
             this.File = file;
         }

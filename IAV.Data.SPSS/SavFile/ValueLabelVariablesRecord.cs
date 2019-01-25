@@ -9,12 +9,12 @@ namespace IAV.Data.SPSS.SavFile
 {
     public class ValueLabelVariablesRecord
     {
-        public SavFile File { get; set; }
+        public File File { get; set; }
         public RecordType RecordType { get; set; }
         public int VariableCount { get; set; }
         public List<int> VariableIndices { get; set; }
 
-        public ValueLabelVariablesRecord(SavFile file)
+        public ValueLabelVariablesRecord(File file)
         {
             this.RecordType = RecordType.ValueLabelVariablesRecord;
             this.File = file;

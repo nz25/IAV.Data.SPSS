@@ -18,9 +18,9 @@ namespace IAV.Data.SPSS.SavFile
         public Endianness Endianness { get; set; }
         public CharacterCode CharacterCode { get; set; }
         
-        public SavFile File { get; set; }
+        public File File { get; set; }
 
-        public MachineIntegerInfoRecord(SavFile file)
+        public MachineIntegerInfoRecord(File file)
         {
             this.File = file;
         }

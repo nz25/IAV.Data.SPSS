@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="IAV.Data.SPSS.SavFile.File" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAgAAQAAEgAgCUAACBACQEQBAgAAAABAAAAkgAAA=</HashCode>
+      <FileName>SavFile\File.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.FileHeaderRecord" Collapsed="true">
+    <Position X="1" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAEQQAAAAggAAACAAAAACAEAAAAAAMAAAEYACA=</HashCode>
+      <FileName>SavFile\FileHeaderRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.VariableRecord" Collapsed="true">
+    <Position X="1" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEAAAAAAUAAAAAgAAAAAAAQAAAAEAAAgAVAAAAMAAAA=</HashCode>
+      <FileName>SavFile\VariableRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.ValueLabelsRecord" Collapsed="true">
+    <Position X="1" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQBAAAAgAAAAAAAAAAAAEAAAIAAAAAAEAAQA=</HashCode>
+      <FileName>SavFile\ValueLabelsRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.DocumentRecord" Collapsed="true">
+    <Position X="1" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAgAAAAAAAQAAAAEAAACAAAAAAEAAAA=</HashCode>
+      <FileName>SavFile\DocumentRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.InfoRecord" Collapsed="true">
+    <Position X="1" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAQAAACAgAAAABAAAAAEAEAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>SavFile\InfoRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.MachineIntegerInfoRecord" Collapsed="true">
+    <Position X="1.5" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAABCAAAAABAAAQAAAAAgAgEAAKAAAAAAAIAAAA=</HashCode>
+      <FileName>SavFile\MachineIntegerInfoRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.MachineFloatingPointInfoRecord" Collapsed="true">
+    <Position X="1.5" Y="6.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAgAAAAgAAAAAAQAAAEAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\MachineFloatingPointInfoRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.VariableDisplayParameterRecord" Collapsed="true">
+    <Position X="1.5" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAEAAAgAAAAAAAAAAAAAAAAEAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\VariableDisplayParameterRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.LongVariableNamesRecord" Collapsed="true">
+    <Position X="1.5" Y="8" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAEAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\LongVariableNamesRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.VeryLongStringRecord" Collapsed="true">
+    <Position X="1.5" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAEAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\VeryLongStringRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.MultipleResponseSetsRecord" Collapsed="true">
+    <Position X="1.5" Y="9.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAEAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\MultipleResponseSetsRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.DataRecord" Collapsed="true">
+    <Position X="1" Y="10.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>SavFile\DataRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.VariableFormat" Collapsed="true">
+    <Position X="7" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAABAAAAAAAAAAAAAAAAAAAAAAoAgAAAAA=</HashCode>
+      <FileName>SavFile\VariableFormat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.ValueLabel" Collapsed="true">
+    <Position X="3.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\ValueLabel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.ValueLabelVariablesRecord" Collapsed="true">
+    <Position X="1.5" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAgAAAAAAAAAAAAEAEAAAAAAAAEAAAA=</HashCode>
+      <FileName>SavFile\ValueLabelVariablesRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.VariableParameters" Collapsed="true">
+    <Position X="4.75" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAEAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\VariableParameters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IAV.Data.SPSS.SavFile.MultipleResponseSet" Collapsed="true">
+    <Position X="4.75" Y="9.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAQAABAAAAAgAQQgAAAAAAA=</HashCode>
+      <FileName>SavFile\MultipleResponseSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="IAV.Data.SPSS.SavFile.VariableType" Collapsed="true">
+    <Position X="3.5" Y="2" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\VariableType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IAV.Data.SPSS.SavFile.MissingValueCount" Collapsed="true">
+    <Position X="5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIAIAAAACAAAAAAAAEAAAAEAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>SavFile\MissingValueCount.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IAV.Data.SPSS.SavFile.VariableFormatType" Collapsed="true">
+    <Position X="8.75" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABQAAAQACABAJAAQAAABARAAAwQBAAwgAAEAOlDAAhE=</HashCode>
+      <FileName>SavFile\VariableFormatType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IAV.Data.SPSS.SavFile.RecordType" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAEAAAAABAAAAAgAAABAAAAAgAAQA=</HashCode>
+      <FileName>SavFile\RecordType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IAV.Data.SPSS.SavFile.RecordSubType" Collapsed="true">
+    <Position X="4.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAACQAACBAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\RecordSubType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IAV.Data.SPSS.SavFile.FloatingPointRepresentation" Collapsed="true">
+    <Position X="4.75" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAgAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\FloatingPointRepresentation.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IAV.Data.SPSS.SavFile.Endianness" Collapsed="true">
+    <Position X="7.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\Endianness.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IAV.Data.SPSS.SavFile.CharacterCode" Collapsed="true">
+    <Position X="9" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAACAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\CharacterCode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IAV.Data.SPSS.SavFile.MeasurementType" Collapsed="true">
+    <Position X="6.75" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAEAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SavFile\MeasurementType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IAV.Data.SPSS.SavFile.Alignment" Collapsed="true">
+    <Position X="8.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAACAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>SavFile\Alignment.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IAV.Data.SPSS.SavFile.CompressionCode" Collapsed="true">
+    <Position X="3.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAgAAAAAAAgAAAAAQAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>SavFile\CompressionCode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -9,7 +9,7 @@ namespace IAV.Data.SPSS.SavFile
 {
     public class FileHeaderRecord
     {
-        public SavFile File { get; set; }
+        public File File { get; set; }
 
         public RecordType RecordType { get; set; } 
         public string ProductName { get; set; }
@@ -24,7 +24,7 @@ namespace IAV.Data.SPSS.SavFile
         public string FileLabel { get; set; }
         public string Padding { get; set; }
 
-        public FileHeaderRecord(SavFile file)
+        public FileHeaderRecord(File file)
         {
             this.File = file;
             this.RecordType = RecordType.FileHeaderRecord;

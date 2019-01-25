@@ -9,14 +9,14 @@ namespace IAV.Data.SPSS.SavFile
 {
     public class InfoRecord
     {
-        public SavFile File { get; set; }
+        public File File { get; set; }
         public RecordType RecordType { get; set; }
         public RecordSubType RecordSubType { get; set; }
         public int ItemSize { get; set; } 
         public int ItemCount { get; set; } 
         public List<byte[]> Items { get; set; }
 
-        public InfoRecord(SavFile file)
+        public InfoRecord(File file)
         {
             this.RecordType = RecordType.InfoRecord;
             this.File = file;

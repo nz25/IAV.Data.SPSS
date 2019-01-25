@@ -12,9 +12,9 @@ namespace IAV.Data.SPSS.SavFile
         public double HighestMissingValue { get; set; }
         public double LowestMissingValue { get; set; }
 
-        public SavFile File { get; set; }
+        public File File { get; set; }
 
-        public MachineFloatingPointInfoRecord(SavFile file)
+        public MachineFloatingPointInfoRecord(File file)
         {
             this.File = file;
         }
