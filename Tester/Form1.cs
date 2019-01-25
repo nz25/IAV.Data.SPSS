@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using IAV.Data.SPSS.IO;
+using IAV.Data.SPSS.SavFile;
 
 namespace Tester
 {
@@ -22,19 +22,27 @@ namespace Tester
         private void button1_Click(object sender, EventArgs e)
         {
 
+
+            // READING
+
             FileStream s = new FileStream("d:\\prepare DR Commerzbank AT.sav", FileMode.Open);
             //FileStream s = new FileStream("d:\\prepare DR Commerzbank AT_uncompressed.sav", FileMode.Open);
 
-            StreamToFile s2f = new StreamToFile(s);
-            s2f.ReadFromStream();
+            SavFile savFile = new SavFile();
+            savFile.ReadFromStream(s);
 
-            int recordcount = 0;
-            foreach (var dataRecord in s2f.SavFile.DataRecords)
-            {
-                recordcount++;                
-            }
+            //int recordcount = 0;
+            //foreach (var dataRecord in savFile.DataRecords)
+            //{
+            //    recordcount++;                
+            //}
             
-            MessageBox.Show(recordcount.ToString());
+            //MessageBox.Show(recordcount.ToString());
+
+            // WRITING
+            FileStream t = new FileStream("d:\\test.sav", FileMode.Create);
+            savFile.WriteToStream(t);
+
         }
     }
 }
